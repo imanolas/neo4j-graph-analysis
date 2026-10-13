@@ -1,0 +1,9 @@
+MATCH (u2:User)
+OPTIONAL MATCH (u:User)-[:IS_FRIEND_WITH]-(u2)
+WITH u2, count(distinct u) as FRIEND_COUNTER
+ORDER BY FRIEND_COUNTER ASC
+WHERE FRIEND_COUNTER < 6
+MATCH (u2)-[:PLAYS]->(g:Game),(u3:User)-[:PLAYS]->(g2:Game)
+WHERE NOT (u2)-[:IS_FRIEND_WITH]-(u3) AND g2.Genre=g.Genre 
+RETURN u2,u3
+LIMIT 5
