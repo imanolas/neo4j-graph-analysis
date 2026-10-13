@@ -1,7 +1,7 @@
 # Neo4j Graph Database Analysis: Digg & Steam Networks
 
 ## Author
-* **Ioannis Manolas** (132020)
+* **Ioannis Manolas** 
 
 ---
 
